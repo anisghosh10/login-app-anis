@@ -25,3 +25,7 @@ input {
   font-weight: 700;
   font-size: larger;
 }
+
+.login_identity .login:visited {
+  color: black;
+}
