@@ -1,9 +1,4 @@
-import {
-  Directive,
-  HostBinding,
-  HostListener,
-  OnInit,
-} from '@angular/core';
+import { Directive, HostBinding, HostListener, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appTextHighlight]',
@@ -17,11 +12,11 @@ export class TextHighlightDirective implements OnInit {
     this.color = 'black';
   }
 
-  @HostListener('mouseenter') backColorEnter() {
+  @HostListener('mouseenter') colorEnter() {
     this.color = 'white';
   }
 
-  @HostListener('mouseleave') backColorLeave() {
+  @HostListener('mouseleave') colorLeave() {
     this.color = '';
   }
 }
