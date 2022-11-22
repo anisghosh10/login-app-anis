@@ -1,6 +1,5 @@
 import {
   Directive,
-  ElementRef,
   HostBinding,
   HostListener,
   OnInit,
@@ -10,12 +9,13 @@ import {
   selector: '[appTextHighlight]',
 })
 export class TextHighlightDirective implements OnInit {
-  constructor(private element: ElementRef) {}
+  constructor() {}
+
+  @HostBinding('style.color') color: string;
 
   ngOnInit() {
-    (this.element.nativeElement as HTMLElement).style.color = 'black';
+    this.color = 'black';
   }
-  @HostBinding('style.color') color: string;
 
   @HostListener('mouseenter') backColorEnter() {
     this.color = 'white';
