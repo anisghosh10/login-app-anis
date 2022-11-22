@@ -10,6 +10,8 @@ export class loginService {
 
   feedbackArray = [];
 
+  userData = [];
+
   adminDetails = [
     {
       id: 'Admin 1',
