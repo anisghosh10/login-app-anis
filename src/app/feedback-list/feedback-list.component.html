@@ -1,0 +1,10 @@
+<app-feedback-display (newFeedback)="addItem($event)"></app-feedback-display>
+<section *ngFor="let item of feedbackList">
+  <h3>Feedback {{ feedbackList.indexOf(item) + 1 }}</h3>
+  <input
+    type="text"
+    name="firstname"
+    class="text-field"
+    value="{{ item }}"
+  />&nbsp;&nbsp;<button (click)="delItem(item)" class="delBtn">DELETE</button>
+</section>

@@ -1,0 +1,27 @@
+.login_identity {
+  text-align: center;
+  color: #336895;
+}
+.heading {
+  text-align: center;
+  color: #336895;
+  font-size: 60px;
+  text-decoration: underline;
+}
+input {
+  border: 1px solid #a6a6a6;
+  width: 230px;
+  height: 30px;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding-left: 10px;
+  color: #6c6c6c;
+  background: #fcfcfc;
+  outline: none;
+}
+.header-input {
+  text-align: center;
+  color: #336895;
+  font-weight: 700;
+  font-size: larger;
+}

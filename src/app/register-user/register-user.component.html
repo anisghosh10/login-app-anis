@@ -1,0 +1,63 @@
+<div>
+  <form>
+    <br>
+  <button href="#" class="previous" routerLink="/user">BACK</button>
+    <h2>Register New User</h2>
+
+    <input
+      type="text"
+      name="firstname"
+      class="text-field"
+      placeholder="First Name"
+      [(ngModel)]="fn"
+    />
+    <input
+      type="text"
+      name="lastname"
+      class="text-field"
+      placeholder="Last Name"
+      [(ngModel)]="ln"
+    />
+    <input type="email" name="email" class="text-field" placeholder="Email" />
+    <input
+      type="number"
+      name="phone"
+      class="text-field"
+      placeholder="Mobile Number"
+    />
+    <input type="date" name="dob" class="text-field" [(ngModel)]="dob" />
+    <input
+      type="password"
+      name="password"
+      class="text-field"
+      placeholder="Password"
+    />
+    <input
+      type="password"
+      name="confirmpassword"
+      class="text-field"
+      placeholder="Confirm Password"
+    />
+
+    <button class="button" (click)="getUsername()">Register</button
+    ><br /><br /><br />
+
+    <label>Generated Username:</label>
+    <input
+      type="text"
+      name="username"
+      class="text-field"
+      placeholder="Username"
+      [ngModel]="username | lowercase"
+      (ngModelChange)="username = $event"
+    />
+    <!-- <label>Age:</label>
+    <input
+      type="text"
+      name="username"
+      class="text-field"
+      placeholder="Age"
+      [(ngModel)]="age"
+    /> -->
+  </form>
+</div>

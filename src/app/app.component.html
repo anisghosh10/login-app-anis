@@ -1,0 +1,21 @@
+<div class="header-input">
+  <label for="ref">Enter Company Name</label>
+  <br />
+  <input
+    type="text"
+    #ref
+    (keyup.enter)="onKey(ref.value)"
+    placeholder="Type and press Enter"
+  />
+</div>
+<app-heading-component [child-alias]="header"></app-heading-component>
+<h1 class="heading">LOGIN</h1>
+
+<div class="login_identity">
+  <a routerLink="/admin">Admin Login</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+    routerLink="/user"
+    >User Login</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+    routerLink="/feedback"
+    >Feedbacks</a>
+</div>
+<router-outlet></router-outlet>
