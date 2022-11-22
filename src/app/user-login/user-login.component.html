@@ -1,5 +1,5 @@
 <div>
-  <form [formGroup]="form" (ngSubmit)="add(form.value)">
+  <form >
     <h2>User Login</h2>
     
     <input
@@ -7,17 +7,15 @@
       name="username"
       class="text-field"
       placeholder="Username"
-      formControlName="username"
     />
     <input
       type="password"
       name="password"
       class="text-field"
       placeholder="Password"
-      formControlName="password"
     />
     
-    <button>Login</button>
+    <button class="button" >Login</button>
     <br /><br />
     <a [routerLink]="['/user', 'forgotPassword']" id="subLink"
       >Forgot Password?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a

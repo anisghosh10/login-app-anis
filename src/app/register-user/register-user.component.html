@@ -1,5 +1,5 @@
 <div>
-  <form>
+  <form [formGroup]="form" (ngSubmit)="add(form.value)">
     <br>
   <button href="#" class="previous" routerLink="/user">BACK</button>
     <h2>Register New User</h2>
@@ -9,37 +9,40 @@
       name="firstname"
       class="text-field"
       placeholder="First Name"
-      [(ngModel)]="fn"
+      formControlName="firstName"
     />
     <input
       type="text"
       name="lastname"
       class="text-field"
       placeholder="Last Name"
-      [(ngModel)]="ln"
+      formControlName="lastName"
     />
-    <input type="email" name="email" class="text-field" placeholder="Email" />
+    <input type="email" name="email" class="text-field" placeholder="Email" formControlName="email"/>
     <input
       type="number"
       name="phone"
       class="text-field"
       placeholder="Mobile Number"
+      formControlName="phone"
     />
-    <input type="date" name="dob" class="text-field" [(ngModel)]="dob" />
+    <input type="date" name="dob" class="text-field"  formControlName="dob"/>
     <input
       type="password"
       name="password"
       class="text-field"
       placeholder="Password"
+      formControlName="password"
     />
     <input
       type="password"
       name="confirmpassword"
       class="text-field"
       placeholder="Confirm Password"
+      formControlName="confirmpassword"
     />
 
-    <button class="button" (click)="getUsername()">Register</button
+    <button class="button" [disabled]="!form.valid">Register</button
     ><br /><br /><br />
 
     <label>Generated Username:</label>
@@ -48,16 +51,7 @@
       name="username"
       class="text-field"
       placeholder="Username"
-      [ngModel]="username | lowercase"
-      (ngModelChange)="username = $event"
+      value="{{form.value.username}}"
     />
-    <!-- <label>Age:</label>
-    <input
-      type="text"
-      name="username"
-      class="text-field"
-      placeholder="Age"
-      [(ngModel)]="age"
-    /> -->
   </form>
 </div>

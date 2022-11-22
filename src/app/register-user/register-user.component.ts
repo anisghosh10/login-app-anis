@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { loginService } from '../login-page.service';
 
 @Component({
@@ -7,19 +8,39 @@ import { loginService } from '../login-page.service';
   styleUrls: ['./register-user.component.css'],
 })
 export class RegisterUserComponent implements OnInit {
-  fn: string;
-  ln: string;
-  username: string;
-  dob: Date;
-  age: number;
-  td:Date = new Date();
+  username:string;
+  form: FormGroup
   constructor(public addserv: loginService) {}
+  userList = [];
+  ngOnInit() {
+    this.userList = this.addserv.userData;
 
-  ngOnInit() {}
-  getUsername() {
-    this.username = this.addserv.fullName(this.fn, this.ln);
+    this.form = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      dob: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      confirmpassword: new FormControl('', Validators.required),
+    });
   }
-  // getAge(){
-  //   this.age = this.addserv.getage(this.td, this.dob);
+  
+  // getUsername() {
+  //   this.username = this.addserv.fullName(this.form.value.firstName.toLowerCase(), this.form.value.lastName.toLowerCase);
   // }
+  add(param) {
+    const userObject = {
+      firsName: this.form.value.firstName,
+      lastName: this.form.value.lastName,
+      email: this.form.value.email,
+      phone: this.form.value.phone,
+      dob: this.form.value.dob,
+      password: this.form.value.password,
+      confirmpassword: this.form.value.confirmpassword,
+      username: this.form.value.firstName.toLowerCase() + this.form.value.lastName.toLowerCase(),
+    };
+    this.userList.push(userObject);
+    console.log(this.userList)
+  }
 }

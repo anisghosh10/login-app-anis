@@ -7,26 +7,27 @@ import { loginService } from '../login-page.service';
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css'],
 })
-export class UserLoginComponent implements OnInit {
-  form: FormGroup;
+export class UserLoginComponent{
+  // form: FormGroup;
 
-  userList = [];
-  constructor(public addserv: loginService) {}
+  // userList = [];
+  // constructor(public addserv: loginService) {}
 
-  ngOnInit() {
-    this.userList = this.addserv.userData;
+  // ngOnInit() {
+  //   this.userList = this.addserv.userData;
 
-    this.form = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-    });
-  }
+  //   this.form = new FormGroup({
+  //     username: new FormControl('', Validators.required),
+  //     password: new FormControl('', Validators.required),
+  //   });
+  // }
 
-  add(param) {
-    const userObject = {
-      username: this.form.value.username,
-      password: this.form.value.password,
-    };
-    this.userList.push(userObject);
-  }
+  // add(param) {
+  //   const userObject = {
+  //     username: this.form.value.username,
+  //     password: this.form.value.password,
+  //   };
+  //   this.userList.push(userObject);
+  //   console.log(this.userList);
+  // }
 }
