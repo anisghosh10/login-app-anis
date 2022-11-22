@@ -16,6 +16,7 @@ import { Admin3Component } from './admin-login/admin3/admin3.component';
 import { HeadingComponentComponent } from './heading-component/heading-component.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { FeedbackDisplayComponent } from './feedback-list/feedback-display/feedback-display.component';
+import { TextHighlightDirective } from './Directives/text-highlight.directive';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -32,6 +33,7 @@ import { FeedbackDisplayComponent } from './feedback-list/feedback-display/feedb
     HeadingComponentComponent,
     FeedbackListComponent,
     FeedbackDisplayComponent,
+    TextHighlightDirective
   ],
   bootstrap: [AppComponent],
   providers: [loginService],
