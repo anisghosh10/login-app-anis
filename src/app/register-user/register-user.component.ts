@@ -26,9 +26,6 @@ export class RegisterUserComponent implements OnInit {
     });
   }
 
-  // getUsername() {
-  //   this.username = this.addserv.fullName(this.form.value.firstName.toLowerCase(), this.form.value.lastName.toLowerCase);
-  // }
   flag: Boolean = true;
   flagH: number;
   add(param) {
@@ -60,7 +57,6 @@ export class RegisterUserComponent implements OnInit {
       this.userList.push(userObject);
       this.flagH = 1;
     } else {
-      console.log('User already exists!');
       this.flagH = 0;
     }
     console.log(this.userList);
