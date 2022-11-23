@@ -42,7 +42,7 @@
       formControlName="confirmpassword"
     />
 
-    <button class="button" >Register</button
+    <button class="button" [disabled]="!form.valid">Register</button
     ><br />
 
     <div *ngIf="flagH == 0">

@@ -10,7 +10,7 @@ h2 {
 
 form {
   width: 280px;
-  height: 290px;
+  height: 340px;
   margin: 40px auto;
   background: #abd0f0;
   border-radius: 3px;
@@ -83,6 +83,11 @@ form .button:active {
 
 #subLink {
   color: black;
-  font-size: small;
+  font-size: 13px;
   text-decoration: none;
+  font-weight: 400;
+}
+.notPresentError{
+  color: red;
+  font-weight: 700;
 }

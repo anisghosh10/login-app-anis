@@ -1,27 +1,33 @@
 <div>
-  <form >
+  <form [formGroup]="form" (ngSubmit)="add(form.value)">
     <h2>User Login</h2>
-    
+
     <input
       type="text"
       name="username"
       class="text-field"
       placeholder="Username"
+      formControlName="username"
     />
     <input
       type="password"
       name="password"
       class="text-field"
       placeholder="Password"
+      formControlName="password"
     />
-    
-    <button class="button" >Login</button>
-    <br /><br />
-    <a [routerLink]="['/user', 'forgotPassword']" id="subLink"
-    appTextHighlight>Forgot Password?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a
-    ><a [routerLink]="['/user', 'register']" id="subLink" appTextHighlight> Register</a
-    ><a [routerLink]="['/user', 'survey']" id="subLink"
-    appTextHighlight>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ensp;Survey</a
+
+    <button class="button" [disabled]="!form.valid">Login</button>
+    <br /> <br>
+    <div *ngIf="flagH">
+      <p class="notPresentError">User Does Not Exists. Register!</p>
+    </div>
+    <a [routerLink]="['/user', 'forgotPassword']" id="subLink" appTextHighlight
+      >Forgot Password?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a
+    ><a [routerLink]="['/user', 'register']" id="subLink" appTextHighlight>
+      Register</a
+    ><a [routerLink]="['/user', 'survey']" id="subLink" appTextHighlight
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ensp;Survey</a
     >
   </form>
 </div>
