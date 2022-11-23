@@ -30,7 +30,7 @@ export class RegisterUserComponent implements OnInit {
   //   this.username = this.addserv.fullName(this.form.value.firstName.toLowerCase(), this.form.value.lastName.toLowerCase);
   // }
   flag: Boolean = true;
-
+  flagH: number;
   add(param) {
     const userObject = {
       firsName: this.form.value.firstName,
@@ -47,17 +47,21 @@ export class RegisterUserComponent implements OnInit {
     for (var i = 0; i < this.userList.length; i++) {
       if (
         this.userList[i].username ===
-        (this.form.value.firstName.toLowerCase() +
-          this.form.value.lastName.toLowerCase())
+        this.form.value.firstName.toLowerCase() +
+          this.form.value.lastName.toLowerCase()
       ) {
         this.flag = false;
         break;
+      } else {
+        this.flag = true;
       }
     }
     if (this.flag) {
       this.userList.push(userObject);
+      this.flagH = 1;
     } else {
       console.log('User already exists!');
+      this.flagH = 0;
     }
     console.log(this.userList);
   }

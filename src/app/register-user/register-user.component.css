@@ -15,7 +15,7 @@ h2 {
 
 form {
   width: 280px;
-  height: 680px;
+  height: 590px;
   margin: 40px auto;
   background: #abd0f0;
   border-radius: 3px;
@@ -97,4 +97,8 @@ form .button:active {
   outline: none;
   display: flex;
   justify-content: center;
+}
+.duplicateText{
+  font-weight: 700;
+  color: red;
 }
