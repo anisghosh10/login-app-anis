@@ -8,8 +8,8 @@ import { loginService } from '../login-page.service';
   styleUrls: ['./register-user.component.css'],
 })
 export class RegisterUserComponent implements OnInit {
-  username:string;
-  form: FormGroup
+  username: string;
+  form: FormGroup;
   constructor(public addserv: loginService) {}
   userList = [];
   ngOnInit() {
@@ -25,10 +25,12 @@ export class RegisterUserComponent implements OnInit {
       confirmpassword: new FormControl('', Validators.required),
     });
   }
-  
+
   // getUsername() {
   //   this.username = this.addserv.fullName(this.form.value.firstName.toLowerCase(), this.form.value.lastName.toLowerCase);
   // }
+  flag: Boolean = true;
+
   add(param) {
     const userObject = {
       firsName: this.form.value.firstName,
@@ -38,9 +40,25 @@ export class RegisterUserComponent implements OnInit {
       dob: this.form.value.dob,
       password: this.form.value.password,
       confirmpassword: this.form.value.confirmpassword,
-      username: this.form.value.firstName.toLowerCase() + this.form.value.lastName.toLowerCase(),
+      username:
+        this.form.value.firstName.toLowerCase() +
+        this.form.value.lastName.toLowerCase(),
     };
-    this.userList.push(userObject);
-    console.log(this.userList)
+    for (var i = 0; i < this.userList.length; i++) {
+      if (
+        this.userList[i].username ===
+        this.form.value.firstName.toLowerCase() +
+          this.form.value.lastName.toLowerCase()
+      ) {
+        this.flag = false;
+        break;
+      }
+    }
+    if (this.flag) {
+      this.userList.push(userObject);
+    } else {
+      console.log('User already exists!');
+    }
+    console.log(this.userList);
   }
 }
