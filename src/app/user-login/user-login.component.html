@@ -18,9 +18,13 @@
     />
 
     <button class="button" [disabled]="!form.valid">Login</button>
-    <br /> <br>
+    <br />
+    <br />
     <div *ngIf="flagH">
       <p class="notPresentError">User Does Not Exists. Register!</p>
+    </div>
+    <div *ngIf="flagPasswordMismatch">
+      <p class="notPresentError">Password does not match!</p>
     </div>
     <a [routerLink]="['/user', 'forgotPassword']" id="subLink" appTextHighlight
       >Forgot Password?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a

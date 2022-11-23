@@ -22,15 +22,19 @@ export class UserLoginComponent implements OnInit {
     });
   }
   flag: boolean;
+  flag1: boolean;
   flagH: boolean;
+  flagPasswordMismatch: boolean;
   add(param) {
     for (var i = 0; i < this.userList.length; i++) {
       if (this.userList[i].username === this.form.value.username) {
         this.flag = false;
-        break;
-      } else {
+      }else {
         this.flag = true;
       }
+    }
+    for(var j = 0; j < this.userList.length; j++){
+      
     }
     if (!this.flag) {
       this.flagH = false;
@@ -38,6 +42,11 @@ export class UserLoginComponent implements OnInit {
       this.flagH = false;
     } else {
       this.flagH = true;
+    }
+    if (!this.flag1) {
+      this.flagPasswordMismatch = false;
+    } else {
+      this.flagPasswordMismatch = true;
     }
   }
 }
