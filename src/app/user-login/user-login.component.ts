@@ -29,12 +29,19 @@ export class UserLoginComponent implements OnInit {
     for (var i = 0; i < this.userList.length; i++) {
       if (this.userList[i].username === this.form.value.username) {
         this.flag = false;
-      }else {
+      } else {
         this.flag = true;
       }
     }
-    for(var j = 0; j < this.userList.length; j++){
-      
+    for (var j = 0; j < this.userList.length; j++) {
+      if (
+        this.userList[j].username === this.form.value.username &&
+        this.userList[j].password === this.form.value.password
+      ) {
+        this.flag1 = false;
+      } else {
+        this.flag1 = true;
+      }
     }
     if (!this.flag) {
       this.flagH = false;
