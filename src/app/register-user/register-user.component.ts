@@ -47,8 +47,8 @@ export class RegisterUserComponent implements OnInit {
     for (var i = 0; i < this.userList.length; i++) {
       if (
         this.userList[i].username ===
-        this.form.value.firstName.toLowerCase() +
-          this.form.value.lastName.toLowerCase()
+        (this.form.value.firstName.toLowerCase() +
+          this.form.value.lastName.toLowerCase())
       ) {
         this.flag = false;
         break;
